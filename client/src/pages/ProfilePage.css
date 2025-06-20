@@ -1,0 +1,81 @@
+.profile-page {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-left {
+  flex: 1;
+}
+
+.profile-right {
+  flex: 2;
+  text-align: right;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.horizontal-section {
+  margin-top: 2rem;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.scroll-item {
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 10px;
+  min-width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-book {
+  background-color: #ffe9e9;
+}
+
+.add-book-button {
+  padding: 1rem;
+  min-width: 200px;
+  border: 2px dashed #999;
+  background-color: #fff;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.inline-form {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.message {
+  color: green;
+  margin-top: 1rem;
+}
+
+.logout-section {
+  margin-top: 3rem;
+  text-align: center;
+}

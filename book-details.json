@@ -1,0 +1,723 @@
+[
+  {
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "genre": "Fiction",
+    "description": "Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genre": "Self-Help",
+    "description": "An easy and proven way to build good habits and break bad ones. Transform your life through the power of small, consistent changes.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Seven Husbands of Evelyn Hugo",
+    "author": "Taylor Jenkins Reid",
+    "genre": "Historical Fiction",
+    "description": "Reclusive Hollywood icon Evelyn Hugo finally tells her life story to an unknown journalist, revealing shocking secrets about her glamorous and scandalous life.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "genre": "Science Fiction",
+    "description": "Set on the desert planet Arrakis, this epic tale follows Paul Atreides as he becomes embroiled in a struggle for control of the universe's most valuable resource.",
+    "coverImage": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "genre": "Thriller",
+    "description": "A psychotherapist becomes obsessed with treating a woman who refuses to speak after allegedly murdering her husband in this gripping psychological thriller.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "genre": "Memoir",
+    "description": "A powerful memoir about a woman who, kept out of school, leaves her survivalist family and goes on to earn a PhD from Cambridge University.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "Bilbo Baggins, a hobbit enjoying his quiet life, is swept into an epic quest to reclaim the lost Dwarf Kingdom of Erebor from the fearsome dragon Smaug.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Where the Crawdads Sing",
+    "author": "Delia Owens",
+    "genre": "Mystery",
+    "description": "A coming-of-age story and murder mystery set in the marshlands of North Carolina, following the life of Kya, the 'Marsh Girl' who lived in isolation.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genre": "Philosophy",
+    "description": "A mystical story about Santiago, a young shepherd who dreams of finding treasure in Egypt, and his journey of self-discovery and following one's dreams.",
+    "coverImage": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "genre": "Science Fiction",
+    "description": "A lone astronaut must save humanity from extinction in this thrilling space adventure filled with science, humor, and heart-pounding suspense.",
+    "coverImage": "https://images.unsplash.com/photo-1446776858070-33e501d19611?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian Fiction",
+    "description": "In a totalitarian future where Big Brother watches everyone, Winston Smith struggles with rebellion and love in this prophetic tale of surveillance and control.",
+    "coverImage": "https://images.unsplash.com/photo-1495640388908-05fa85288e61?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Classic Literature",
+    "description": "A timeless story of racial injustice and childhood innocence told through the eyes of Scout Finch in 1930s Alabama.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic Literature",
+    "description": "Set in the Jazz Age, this tale of love, wealth, and the American Dream follows the mysterious Jay Gatsby and his obsession with Daisy Buchanan.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Coming of Age",
+    "description": "Holden Caulfield's cynical yet vulnerable journey through New York City after being expelled from prep school remains a defining work of adolescent alienation.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "description": "Elizabeth Bennet navigates love, marriage, and social expectations in Regency England in this witty and enduring romance.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "Frodo Baggins embarks on an epic quest to destroy the One Ring and save Middle-earth from the Dark Lord Sauron in this fantasy masterpiece.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "description": "An orphaned boy discovers he's a wizard on his 11th birthday and enters the magical world of Hogwarts School of Witchcraft and Wizardry.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "genre": "Dystopian Fiction",
+    "description": "In a totalitarian society where women have lost all rights, Offred navigates life as a reproductive servant in this chilling vision of the future.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genre": "Dystopian Fiction",
+    "description": "In a future society where happiness is manufactured and individuality is suppressed, one man questions the price of perfection.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "genre": "Young Adult",
+    "description": "In a post-apocalyptic world, Katniss Everdeen volunteers for a deadly televised competition to save her sister's life.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "genre": "Psychological Thriller",
+    "description": "When Amy Dunne disappears on her wedding anniversary, her husband Nick becomes the prime suspect in this twisted tale of marriage and deception.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Girl with the Dragon Tattoo",
+    "author": "Stieg Larsson",
+    "genre": "Crime Thriller",
+    "description": "A journalist and a troubled hacker team up to solve a decades-old disappearance in this dark Swedish crime thriller.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "genre": "Young Adult",
+    "description": "Two teenagers with cancer meet at a support group and fall in love in this heartbreaking and beautiful story about life and mortality.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "genre": "Historical Fiction",
+    "description": "Set against the backdrop of Afghanistan's tumultuous history, this is a story of friendship, guilt, and redemption.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Life of Pi",
+    "author": "Yann Martel",
+    "genre": "Adventure",
+    "description": "A young Indian boy survives 227 days stranded on a lifeboat in the Pacific Ocean with a Bengal tiger named Richard Parker.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "genre": "Historical Fiction",
+    "description": "Death narrates the story of Liesel, a young girl living with foster parents in Nazi Germany who finds solace in stealing books.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "genre": "Mystery Thriller",
+    "description": "A symbologist becomes embroiled in a deadly quest to solve an ancient mystery that could shake the foundations of Christianity.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Curious Incident of the Dog in the Night-Time",
+    "author": "Mark Haddon",
+    "genre": "Contemporary Fiction",
+    "description": "A 15-year-old with autism investigates the death of a neighbor's dog and uncovers family secrets in this unique and moving novel.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "genre": "Post-Apocalyptic Fiction",
+    "description": "A father and son journey through a desolate post-apocalyptic landscape in this haunting tale of survival and love.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "genre": "Magical Realism",
+    "description": "The multi-generational saga of the Buendía family in the fictional town of Macondo, blending reality with fantasy.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "genre": "Non-fiction",
+    "description": "A brief history of humankind, exploring how Homo sapiens came to dominate the world through cognitive, agricultural, and scientific revolutions.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "genre": "Science Fiction",
+    "description": "An astronaut stranded on Mars must use his ingenuity and scientific knowledge to survive until rescue arrives.",
+    "coverImage": "https://images.unsplash.com/photo-1446776858070-33e501d19611?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "A Game of Thrones",
+    "author": "George R.R. Martin",
+    "genre": "Fantasy",
+    "description": "In the Seven Kingdoms of Westeros, noble families vie for the Iron Throne in this epic tale of power, betrayal, and magic.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Shining",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "description": "A writer becomes the winter caretaker of an isolated hotel and descends into madness, terrorizing his wife and psychic son.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "It",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "description": "A group of children face their worst fears when they encounter a shape-shifting entity that feeds on terror in the town of Derry.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Stand",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "description": "After a deadly plague wipes out most of humanity, survivors must choose between good and evil in this epic post-apocalyptic tale.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Outlander",
+    "author": "Diana Gabaldon",
+    "genre": "Historical Romance",
+    "description": "A WWII nurse is mysteriously transported back to 18th-century Scotland, where she must navigate love and survival.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Time Traveler's Wife",
+    "author": "Audrey Niffenegger",
+    "genre": "Science Fiction Romance",
+    "description": "A love story between a man with a genetic disorder that causes him to time travel and his wife who must cope with his unpredictable absences.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Help",
+    "author": "Kathryn Stockett",
+    "genre": "Historical Fiction",
+    "description": "Set in 1960s Mississippi, this story explores the lives of African American maids and their relationships with white employers.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Water for Elephants",
+    "author": "Sara Gruen",
+    "genre": "Historical Fiction",
+    "description": "An elderly man recalls his youth working for a traveling circus during the Great Depression.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Lovely Bones",
+    "author": "Alice Sebold",
+    "genre": "Contemporary Fiction",
+    "description": "A young girl watches from heaven as her family copes with her murder and her killer evades justice.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Big Little Lies",
+    "author": "Liane Moriarty",
+    "genre": "Contemporary Fiction",
+    "description": "Three women's lives collide in unexpected ways, leading to a shocking death at a school trivia night.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "genre": "Psychological Thriller",
+    "description": "An alcoholic divorcee becomes entangled in a missing person case after witnessing something shocking from her train window.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Me Before You",
+    "author": "Jojo Moyes",
+    "genre": "Romance",
+    "description": "A quirky young woman becomes a caregiver for a wealthy quadriplegic man, and their relationship transforms both their lives.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Hate U Give",
+    "author": "Angie Thomas",
+    "genre": "Young Adult",
+    "description": "A teenage girl finds her voice and fights for justice after witnessing the fatal shooting of her childhood friend by police.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Eleanor Oliphant Is Completely Fine",
+    "author": "Gail Honeyman",
+    "genre": "Contemporary Fiction",
+    "description": "A socially awkward woman's carefully ordered life changes when she develops feelings for a musician and befriends a coworker.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "genre": "Self-Help",
+    "description": "A counterintuitive approach to living a good life by focusing on what truly matters and letting go of what doesn't.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Becoming",
+    "author": "Michelle Obama",
+    "genre": "Memoir",
+    "description": "The former First Lady shares her journey from childhood in Chicago to her years in the White House.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "genre": "Self-Help",
+    "description": "A principle-centered approach to solving personal and professional problems through character development.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Power of Now",
+    "author": "Eckhart Tolle",
+    "genre": "Spirituality",
+    "description": "A guide to spiritual enlightenment through living in the present moment and transcending ego-driven thoughts.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Think and Grow Rich",
+    "author": "Napoleon Hill",
+    "genre": "Self-Help",
+    "description": "Based on interviews with successful people, this classic reveals the secrets to achieving wealth and success.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "genre": "Business",
+    "description": "A methodology for developing businesses and products through validated learning, scientific experimentation, and iterative design.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "genre": "Biography",
+    "description": "The authorized biography of Apple's co-founder, based on extensive interviews with Jobs and those who knew him.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Immortal Life of Henrietta Lacks",
+    "author": "Rebecca Skloot",
+    "genre": "Non-fiction",
+    "description": "The story of how cells taken from a poor black woman became vital tools in medical research and the ethical questions raised.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Born a Crime",
+    "author": "Trevor Noah",
+    "genre": "Memoir",
+    "description": "The Daily Show host's memoir about growing up in South Africa during apartheid with his remarkable mother.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Devil Wears Prada",
+    "author": "Lauren Weisberger",
+    "genre": "Contemporary Fiction",
+    "description": "A young woman lands a job as assistant to a demanding fashion magazine editor in this behind-the-scenes look at the fashion world.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Notebook",
+    "author": "Nicholas Sparks",
+    "genre": "Romance",
+    "description": "An elderly man reads the story of his epic love affair to his wife, who suffers from Alzheimer's disease.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "A Walk to Remember",
+    "author": "Nicholas Sparks",
+    "genre": "Romance",
+    "description": "A popular high school student falls in love with the quiet minister's daughter in this touching story of first love and loss.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Five People You Meet in Heaven",
+    "author": "Mitch Albom",
+    "genre": "Contemporary Fiction",
+    "description": "An elderly amusement park maintenance man learns about the meaning of his life through encounters with five people in heaven.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Tuesdays with Morrie",
+    "author": "Mitch Albom",
+    "genre": "Memoir",
+    "description": "A former student reconnects with his dying professor for weekly life lessons in this touching memoir about friendship and mortality.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Secret",
+    "author": "Rhonda Byrne",
+    "genre": "Self-Help",
+    "description": "Based on the law of attraction, this book claims that positive thinking can create life-changing results in happiness, health, and wealth.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Wild",
+    "author": "Cheryl Strayed",
+    "genre": "Memoir",
+    "description": "A woman hikes 1,100 miles of the Pacific Crest Trail alone to heal from personal tragedy and find herself.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Eat, Pray, Love",
+    "author": "Elizabeth Gilbert",
+    "genre": "Memoir",
+    "description": "A woman's journey of self-discovery through Italy, India, and Indonesia following a difficult divorce.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Giver",
+    "author": "Lois Lowry",
+    "genre": "Young Adult",
+    "description": "In a seemingly perfect society, a young boy discovers the dark truth about his community when he's chosen to receive memories of the past.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Divergent",
+    "author": "Veronica Roth",
+    "genre": "Young Adult",
+    "description": "In a dystopian Chicago, society is divided into five factions, and one girl discovers she doesn't fit into any single category.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Maze Runner",
+    "author": "James Dashner",
+    "genre": "Young Adult",
+    "description": "A group of boys trapped in a maze must work together to escape while uncovering the truth about their imprisonment.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Twilight",
+    "author": "Stephenie Meyer",
+    "genre": "Young Adult Romance",
+    "description": "A teenage girl falls in love with a vampire in this supernatural romance that launched a cultural phenomenon.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Perks of Being a Wallflower",
+    "author": "Stephen Chbosky",
+    "genre": "Coming of Age",
+    "description": "An introverted teenager navigates high school, friendship, and first love through letters to an anonymous friend.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Looking for Alaska",
+    "author": "John Green",
+    "genre": "Young Adult",
+    "description": "A teenager's life changes when he meets the enigmatic Alaska Young at boarding school in this story about love, loss, and growing up.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Paper Towns",
+    "author": "John Green",
+    "genre": "Young Adult",
+    "description": "A high school senior embarks on a cross-country road trip to find his mysterious neighbor who disappeared after leaving cryptic clues.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "An Abundance of Katherines",
+    "author": "John Green",
+    "genre": "Young Adult",
+    "description": "A teenage prodigy who has been dumped by 19 girls named Katherine goes on a road trip to discover his purpose in life.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Glass Castle",
+    "author": "Jeannette Walls",
+    "genre": "Memoir",
+    "description": "A journalist's shocking memoir about her unconventional, poverty-stricken upbringing with deeply dysfunctional parents.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Into the Wild",
+    "author": "Jon Krakauer",
+    "genre": "Biography",
+    "description": "The true story of Christopher McCandless, who gave away his savings and hitchhiked to Alaska to live in the wilderness.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Into Thin Air",
+    "author": "Jon Krakauer",
+    "genre": "Adventure",
+    "description": "A firsthand account of the 1996 Mount Everest disaster that claimed eight lives during a commercial expedition.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Color Purple",
+    "author": "Alice Walker",
+    "genre": "Historical Fiction",
+    "description": "An African American woman's journey from abuse and oppression to self-discovery and empowerment in the early 20th century South.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "genre": "Historical Fiction",
+    "description": "A former slave is haunted by the ghost of her dead daughter in this powerful story about slavery's lasting trauma.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Joy Luck Club",
+    "author": "Amy Tan",
+    "genre": "Contemporary Fiction",
+    "description": "Four Chinese immigrant mothers and their American-born daughters navigate cultural differences and family relationships.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Memoirs of a Geisha",
+    "author": "Arthur Golden",
+    "genre": "Historical Fiction",
+    "description": "A young girl is sold to a geisha house and rises to become one of Japan's most celebrated geishas in pre-war Kyoto.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Poisonwood Bible",
+    "author": "Barbara Kingsolver",
+    "genre": "Historical Fiction",
+    "description": "An American missionary family's experiences in the Belgian Congo told from the perspectives of the wife and four daughters.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Cold Mountain",
+    "author": "Charles Frazier",
+    "genre": "Historical Fiction",
+    "description": "A wounded Confederate soldier deserts and walks home to his beloved in the Blue Ridge Mountains during the Civil War.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The English Patient",
+    "author": "Michael Ondaatje",
+    "genre": "Historical Fiction",
+    "description": "Four people come together in an Italian villa at the end of World War II, each dealing with their own wartime trauma.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "All the Light We Cannot See",
+    "author": "Anthony Doerr",
+    "genre": "Historical Fiction",
+    "description": "A blind French girl and a German boy's paths collide in occupied France during World War II.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Nightingale",
+    "author": "Kristin Hannah",
+    "genre": "Historical Fiction",
+    "description": "Two sisters in France struggle to survive and resist the Nazi occupation during World War II.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Pillars of the Earth",
+    "author": "Ken Follett",
+    "genre": "Historical Fiction",
+    "description": "The building of a cathedral in 12th-century England becomes the backdrop for love, politics, and social upheaval.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "World Without End",
+    "author": "Ken Follett",
+    "genre": "Historical Fiction",
+    "description": "The sequel to Pillars of the Earth, set 200 years later as the Black Death ravages Europe.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Other Boleyn Girl",
+    "author": "Philippa Gregory",
+    "genre": "Historical Fiction",
+    "description": "The story of Anne Boleyn's rise and fall told through the eyes of her sister Mary in Tudor England.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Wolf Hall",
+    "author": "Hilary Mantel",
+    "genre": "Historical Fiction",
+    "description": "Thomas Cromwell's rise to power in the court of Henry VIII during the king's quest to divorce Catherine of Aragon.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Thorn Birds",
+    "author": "Colleen McCullough",
+    "genre": "Historical Fiction",
+    "description": "A sweeping saga of the Cleary family in the Australian Outback spanning three generations.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Roots",
+    "author": "Alex Haley",
+    "genre": "Historical Fiction",
+    "description": "The story of Kunta Kinte and his descendants, tracing African American history from slavery to freedom.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Shogun",
+    "author": "James Clavell",
+    "genre": "Historical Fiction",
+    "description": "An English sailor becomes a samurai in feudal Japan in this epic tale of culture clash and political intrigue.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Count of Monte Cristo",
+    "author": "Alexandre Dumas",
+    "genre": "Classic Literature",
+    "description": "A man wrongly imprisoned escapes and seeks elaborate revenge against those who betrayed him in this tale of justice and redemption.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "genre": "Classic Literature",
+    "description": "Jean Valjean's quest for redemption in 19th-century France becomes an epic story of love, sacrifice, and social justice.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "genre": "Classic Literature",
+    "description": "A married aristocrat's affair with a cavalry officer leads to tragedy in this exploration of love, society, and morality.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "genre": "Classic Literature",
+    "description": "Russian society during the Napoleonic era is depicted through the lives of several aristocratic families.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Classic Literature",
+    "description": "A poor student commits murder and grapples with guilt and redemption in this psychological masterpiece.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Classic Literature",
+    "description": "Three brothers with vastly different personalities are drawn into their father's murder in this exploration of faith and doubt.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "genre": "Classic Literature",
+    "description": "An orphaned governess falls in love with her brooding employer in this Gothic romance about independence and equality.",
+    "coverImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "genre": "Classic Literature",
+    "description": "The passionate and destructive love between Heathcliff and Catherine spans generations on the Yorkshire moors.",
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "genre": "Classic Literature",
+    "description": "Captain Ahab's obsessive quest for revenge against the white whale that took his leg becomes an epic tale of man versus nature.",
+    "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Adventures of Huckleberry Finn",
+    "author": "Mark Twain",
+    "genre": "Classic Literature",
+    "description": "A boy and an escaped slave travel down the Mississippi River in this coming-of-age story about friendship and moral growth.",
+    "coverImage": "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "genre": "Classic Literature",
+    "description": "A young man's portrait ages instead of his body as he pursues a life of hedonism and moral corruption.",
+    "coverImage": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "genre": "Classic Literature",
+    "description": "A scientist creates life from dead tissue, but his creature becomes a monster seeking revenge against its creator.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=600&fit=crop"
+  },
+  {
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "genre": "Horror",
+    "description": "Count Dracula travels from Transylvania to England to spread the undead curse, pursued by a group determined to stop him.",
+    "coverImage": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop"
+  }
+]
