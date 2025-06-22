@@ -1,0 +1,75 @@
+/* src/pages/Home.css */
+.home-container {
+  padding: 4rem 2rem; /* More generous padding */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff; /* White background for the content area */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  margin-top: 2rem; /* Space from top */
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #212529; /* Darker title color */
+  margin-bottom: 1rem;
+}
+
+.home-description {
+  font-size: 1.3rem;
+  color: #495057;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-section {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  background-color: #f0f2f5; /* Slightly darker background for sections */
+  border-radius: 10px;
+}
+
+.home-section h3 {
+  font-size: 1.8rem;
+  color: #212529;
+  margin-bottom: 1.5rem;
+}
+
+.home-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between list items */
+}
+
+.home-list li {
+  font-size: 1.1rem;
+}
+
+.home-list a {
+  display: block; /* Make the whole list item clickable */
+  padding: 0.8rem 1.2rem;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: #343a40;
+  text-align: left;
+}
+
+.home-list a:hover {
+  background-color: #dee2e6;
+  text-decoration: none;
+  transform: translateX(5px); /* Subtle slide on hover */
+}
+
+.welcome-message {
+  margin-top: 2.5rem;
+  font-size: 1.1rem;
+  color: #6c757d;
+  font-style: italic;
+}

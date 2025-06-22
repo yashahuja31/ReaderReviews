@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import LogoutButton from "../components/LogoutButton";
 import { useAuth } from "../contexts/authContext";
+import './Home.css';
 
 const Home = () => {
   const { user } = useAuth();

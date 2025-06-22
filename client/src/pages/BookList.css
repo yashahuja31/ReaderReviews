@@ -1,0 +1,236 @@
+.book-details-container {
+padding: 3rem;
+max-width: 960px; /* Slightly wider for better layout */
+margin: 3rem auto; /* Increased top/bottom margin */
+background-color: #fff;
+border-radius: 15px; /* More rounded corners */
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+}
+
+.book-details-content {
+display: grid;
+grid-template-columns: minmax(150px, 250px) 1fr; /* Fixed cover, flexible info */
+gap: 3rem; /* Larger gap between cover and info */
+margin-bottom: 3rem;
+align-items: start; /* Align items to the top in the grid */
+}
+
+.book-details-cover {
+width: 100%;
+height: auto; /* Maintain aspect ratio */
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+object-fit: cover; /* Ensure image fills container */
+}
+
+.book-details-info {
+display: flex;
+flex-direction: column;
+justify-content: start; /* Align content to the top */
+}
+
+.book-details-info h2 {
+font-size: 2.8rem; /* Slightly larger title */
+color: #282c3f; /* Darker, sophisticated title color */
+margin-bottom: 0.8rem;
+line-height: 1.2;
+}
+
+.book-details-info p {
+margin: 0.7rem 0;
+color: #5c627d; /* Slightly lighter text for body */
+font-size: 1.15rem;
+}
+
+.book-details-info p strong {
+color: #282c3f;
+font-weight: 600;
+}
+
+.book-details-rating {
+font-size: 1.3rem;
+color: #5c627d;
+margin-top: 1.5rem;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.book-details-rating .filled-star {
+color: #ffc107; /* Classic gold for stars */
+}
+
+.book-actions {
+margin-top: 2rem;
+display: flex;
+gap: 1.5rem;
+}
+
+.book-actions button {
+padding: 12px 24px;
+border-radius: 10px;
+font-size: 1.1rem;
+font-weight: 500;
+}
+
+.book-actions .read-button {
+background-color: #6759ff; /* A more vibrant purple */
+border: 1px solid #6759ff;
+color: #fff;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.book-actions .read-button:hover {
+background-color: #fff;
+color: #6759ff;
+}
+
+.feedback {
+color: #2ecc71; /* Emerald green for success */
+margin-top: 1.5rem;
+font-weight: 500;
+}
+
+.error-message {
+color: #e74c3c; /* Alizarin red for errors */
+margin-top: 1.5rem;
+font-weight: 500;
+}
+
+hr {
+border: 0;
+height: 1px;
+background: #e0e6ed; /* Light grey separator */
+margin: 3rem 0;
+}
+
+/* Review Section */
+.reviews-section h3,
+.submit-review-section h3 {
+font-size: 2rem;
+color: #282c3f;
+margin-top: 3rem;
+margin-bottom: 1.8rem;
+border-bottom: 2px solid #e0e6ed;
+padding-bottom: 0.8rem;
+}
+
+.review-form {
+margin-top: 1.5rem;
+padding: 2rem;
+background-color: #f9f9fb; /* Light, off-white background */
+border-radius: 12px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+}
+
+.star-rating {
+font-size: 32px; /* Even larger stars */
+margin-bottom: 1.5rem;
+display: flex;
+gap: 10px;
+align-items: center;
+justify-content: center;
+}
+
+.star-rating .star {
+color: #ccc;
+cursor: pointer;
+transition: color 0.2s ease;
+}
+
+.star-rating .star.filled {
+color: #ffc107;
+}
+
+.review-form textarea {
+width: calc(100% - 20px);
+min-height: 120px;
+padding: 12px;
+border: 1px solid #ced4da;
+border-radius: 8px;
+font-size: 1rem;
+line-height: 1.6;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-form textarea:focus {
+border-color: #6759ff;
+box-shadow: 0 0 0 0.2rem rgba(103, 89, 255, 0.25);
+outline: none;
+}
+
+.review-form button {
+background-color: #20c997; /* Teal-ish green for review submit */
+border: 1px solid #20c997;
+color: #fff;
+padding: 12px 24px;
+border-radius: 10px;
+font-size: 1.1rem;
+font-weight: 500;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.review-form button:hover {
+background-color: #fff;
+color: #20c997;
+}
+
+.review-list {
+list-style: none;
+padding: 0;
+margin-top: 2rem;
+}
+
+.review-item {
+background: #f9f9fb;
+padding: 1.5rem;
+margin-bottom: 1.5rem;
+border-radius: 12px;
+border-left: 6px solid #6759ff; /* Accent border */
+box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+}
+
+.review-item strong {
+display: block;
+font-size: 1.2rem;
+color: #282c3f;
+margin-bottom: 0.5rem;
+}
+
+.review-item .review-rating {
+color: #777;
+font-size: 1rem;
+margin-bottom: 0.8rem;
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.review-item .review-rating .filled-star {
+color: #ffc107;
+}
+
+.review-item p {
+margin: 0;
+color: #5c627d;
+line-height: 1.7;
+}
+
+
+@media (max-width: 768px) {
+    .book-details-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    }
+    .book-details-cover {
+    max-width: 200px;
+    margin: 0 auto; 
+    }
+    .book-actions {
+    flex-direction: column;
+    gap: 1rem;
+    }
+}
