@@ -1,7 +1,7 @@
 
 ---
 
-# 📚 BookReview Hub
+# 📚 ReaderReviews Hub
 
 A full-stack web application designed for book lovers to discover, review, and share their thoughts on various books. Users can browse a collection of books, read and write reviews, track books they've read, and manage their profiles. The application also includes administrative functionalities for managing the book catalog.
 
