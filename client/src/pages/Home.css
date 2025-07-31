@@ -1,75 +1,134 @@
 /* src/pages/Home.css */
 .home-container {
-  padding: 4rem 2rem; /* More generous padding */
+  padding: var(--spacing-xl) var(--spacing-lg);
   max-width: 900px;
-  margin: 0 auto;
+  margin: var(--spacing-lg) auto;
   text-align: center;
-  background-color: #ffffff; /* White background for the content area */
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft shadow */
-  margin-top: 2rem; /* Space from top */
+  background-color: var(--background-card);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-medium);
+  animation: fadeIn 0.8s ease-out forwards; /* Added animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .home-title {
-  font-size: 3rem;
+  font-size: 3.8rem; /* Larger, more impactful title */
   font-weight: 700;
-  color: #212529; /* Darker title color */
-  margin-bottom: 1rem;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -1px; /* Slightly tighter spacing */
 }
 
 .home-description {
-  font-size: 1.3rem;
-  color: #495057;
-  margin-bottom: 2.5rem;
-  max-width: 600px;
+  font-size: 1.4rem; /* Larger description */
+  color: var(--text-medium);
+  margin-bottom: var(--spacing-xl);
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
 }
 
 .home-section {
-  margin: 2.5rem 0;
-  padding: 1.5rem;
-  background-color: #f0f2f5; /* Slightly darker background for sections */
-  border-radius: 10px;
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background-color: var(--background-light);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for sections */
 }
 
 .home-section h3 {
-  font-size: 1.8rem;
-  color: #212529;
-  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border-color); /* Underline effect */
+  padding-bottom: var(--spacing-xs);
+  display: inline-block; /* To make border-bottom only under text */
 }
 
 .home-list {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem; /* Space between list items */
+  display: grid; /* Use grid for better layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: var(--spacing-md); /* Space between grid items */
+  margin-top: var(--spacing-lg);
 }
 
 .home-list li {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for list items */
+}
+
+.home-list li:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: var(--shadow-light); /* Add shadow on hover */
 }
 
 .home-list a {
-  display: block; /* Make the whole list item clickable */
-  padding: 0.8rem 1.2rem;
-  background-color: #e9ecef;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  color: #343a40;
-  text-align: left;
+  display: flex; /* Flex for icon and text */
+  align-items: center;
+  gap: var(--spacing-xs); /* Space between icon and text */
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--background-card);
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--primary-color);
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .home-list a:hover {
-  background-color: #dee2e6;
+  background-color: var(--primary-color);
+  color: white;
   text-decoration: none;
-  transform: translateX(5px); /* Subtle slide on hover */
+  border-color: var(--primary-color);
+}
+
+.home-list a svg {
+  font-size: 1.5rem; /* Icon size */
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.home-list a:hover svg {
+  color: white;
 }
 
 .welcome-message {
-  margin-top: 2.5rem;
-  font-size: 1.1rem;
-  color: #6c757d;
+  margin-top: var(--spacing-xl);
+  font-size: 1.2rem;
+  color: var(--text-light);
   font-style: italic;
 }
+
+.logout-container {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 2.8rem;
+  }
+  .home-description {
+    font-size: 1.1rem;
+  }
+  .home-list {
+    grid-template-columns: 1fr; /* Stack items on small screens */
+  }
+}
+

@@ -3,42 +3,68 @@ import LogoutButton from "../components/LogoutButton";
 import { useAuth } from "../contexts/authContext";
 import './Home.css';
 
+import { BookOpen, User, PlusCircle, LogIn, UserPlus } from 'lucide-react';
+
 const Home = () => {
   const { user } = useAuth();
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
-      <h1 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>📚 BookReview Hub</h1>
-      <p style={{ fontSize: "1.2rem", margin: "1rem 0" }}>
-        Discover, review, and share your thoughts on your favorite books!
+    <div className="home-container">
+      <h1 className="home-title">📚 ReaderReviews Hub</h1>
+      <p className="home-description">
+        Discover, review, and share your thoughts on your favorite books with a vibrant community of readers.
       </p>
 
-      <div style={{ margin: "2rem 0" }}>
-        <h3>Explore:</h3>
-        <ul style={{ listStyle: "none", paddingLeft: 0 }}>
-          <li><Link to="/books">📖 Browse All Books</Link></li>
+      <div className="home-section">
+        <h3>Explore the World of Books</h3>
+        <ul className="home-list">
+          <li>
+            <Link to="/books">
+              <BookOpen /> <span>Browse All Books</span>
+            </Link>
+          </li>
           {user && (
             <>
-              <li><Link to="/profilepage">👤 Your Profile</Link></li>
-              {user.isAdmin && <li><Link to="/addbook">➕ Add a New Book</Link></li>}
+              <li>
+                <Link to="/profilepage">
+                  <User /> <span>Your Profile</span>
+                </Link>
+              </li>
+              {user.isAdmin && (
+                <li>
+                  <Link to="/addbook">
+                    <PlusCircle /> <span>Add a New Book</span>
+                  </Link>
+                </li>
+              )}
             </>
           )}
           {!user && (
             <>
-              <li><Link to="/login">🔐 Login</Link></li>
-              <li><Link to="/register">📝 Register</Link></li>
+              <li>
+                <Link to="/login">
+                  <LogIn /> <span>Login</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/register">
+                  <UserPlus /> <span>Register</span>
+                </Link>
+              </li>
             </>
           )}
         </ul>
       </div>
 
       {user && (
-        <div style={{ marginTop: "2rem", fontStyle: "italic" }}>
-          Logged in as <strong>{user.name}</strong> ({user.isAdmin ? "Admin" : "User"})
-        </div>
+        <p className="welcome-message">
+          Welcome back, <strong>{user.name}</strong>! You are logged in as {user.isAdmin ? "an Admin" : "a User"}.
+        </p>
       )}
 
-      <LogoutButton />
+      <div className="logout-container">
+        <LogoutButton />
+      </div>
     </div>
   );
 };

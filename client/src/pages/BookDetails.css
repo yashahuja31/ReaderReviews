@@ -1,44 +1,275 @@
+/* src/pages/BookDetails.css */
+
+/* The main container for the book details page */
 .book-details-container {
-  padding: 2rem;
-  max-width: 700px;
-  margin: auto;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  max-width: 960px; /* Slightly wider for better content display */
+  margin: var(--spacing-lg) auto; /* Increased top/bottom margin */
+  background-color: var(--background-card);
+  border-radius: var(--border-radius-lg); /* More rounded corners */
+  box-shadow: var(--shadow-medium); /* More pronounced shadow */
+  animation: fadeInScale 0.6s ease-out forwards; /* Inherit global animation */
+}
+
+/* Content wrapper for book details (cover + info) */
+.book-details-content {
+  display: grid;
+  grid-template-columns: minmax(150px, 250px) 1fr; /* Fixed cover width, flexible info */
+  gap: var(--spacing-xl); /* Larger gap between cover and info */
+  margin-bottom: var(--spacing-xl);
+  align-items: start; /* Align items to the top in the grid */
+}
+
+/* Styling for the book cover image */
+.book-details-cover {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for the image */
+  object-fit: cover; /* Ensure image fills container */
+  transition: transform 0.3s ease-in-out; /* Subtle hover animation */
+}
+
+.book-details-cover:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Styling for the book information section */
+.book-details-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start; /* Align content to the top */
+}
+
+.book-details-info h2 {
+  font-size: 2.8rem; /* Slightly larger title */
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+.book-details-info p {
+  margin: 0.7rem 0;
+  color: var(--text-medium);
+  font-size: 1.15rem;
+}
+
+.book-details-info p strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* Styling for the average rating display */
+.book-details-rating {
+  font-size: 1.3rem;
+  color: var(--text-medium);
+  margin-top: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.book-details-rating .filled-star {
+  color: #FFD700; /* Classic gold for stars */
+}
+
+/* Actions section (e.g., Mark as Read button) */
+.book-actions {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-md);
 }
 
 .book-actions button {
-  padding: 8px 16px;
-  background: #007bff;
-  color: white;
+  /* Inherits global button styles but can be overridden here */
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.book-actions .read-button {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.book-actions .read-button:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* Feedback messages */
+.feedback-message {
+  color: var(--success-color);
+  margin-top: var(--spacing-sm);
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-top: var(--spacing-sm);
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Horizontal rule for separation */
+hr {
   border: none;
-  margin-bottom: 10px;
-  cursor: pointer;
+  border-top: 1px solid var(--border-color);
+  margin: var(--spacing-xl) 0;
 }
 
-.feedback {
-  color: green;
-  margin-top: 0.5rem;
+/* Review Section */
+.reviews-section h3,
+.submit-review-section h3 {
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: var(--spacing-xs);
+  display: inline-block;
 }
 
+/* Review Form */
 .review-form {
-  margin-top: 1rem;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--background-light);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  animation: slideInUp 0.6s ease-out forwards; /* Animation for form */
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .star-rating {
-  margin-bottom: 0.5rem;
+  font-size: 32px; /* Larger stars */
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
-.star-rating .filled {
-  color: gold;
+.star-rating .star {
+  color: var(--border-color); /* Unfilled star color */
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.1s ease;
 }
 
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 0.5rem;
+.star-rating .star.filled {
+  color: #FFD700; /* Filled star color */
 }
 
-.review {
-  background: #f9f9f9;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 6px;
+.star-rating .star:hover {
+  transform: scale(1.1); /* Pop effect on hover */
+}
+
+.review-form textarea {
+  width: calc(100% - var(--spacing-md)); /* Adjust for padding */
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+  outline: none;
+}
+
+.review-form button {
+  background-color: var(--accent-color); /* Teal-ish green for review submit */
+  border: 1px solid var(--accent-color);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.review-form button:hover {
+  background-color: #fff;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* List of existing reviews */
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--spacing-lg);
+}
+
+.review-item {
+  background: var(--background-card);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  border-left: 6px solid var(--primary-color); /* Accent border */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+  animation: fadeIn 0.5s ease-out forwards; /* Fade in each review */
+}
+
+.review-item strong {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.review-item .review-rating {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.review-item .review-rating .filled-star {
+  color: #FFD700;
+}
+
+.review-item p {
+  margin: 0;
+  color: var(--text-medium);
+  line-height: 1.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .book-details-content {
+    grid-template-columns: 1fr; /* Stack cover and info vertically */
+    gap: var(--spacing-lg);
+  }
+  .book-details-cover {
+    max-width: 200px; /* Limit image width on small screens */
+    margin: 0 auto; /* Center image */
+  }
+  .book-actions {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: var(--spacing-sm);
+  }
 }

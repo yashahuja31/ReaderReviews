@@ -1,4 +1,3 @@
-Here is a detailed `README.md` file for your Book Review Hub project, covering its functionality, architecture, setup, and usage.
 
 ---
 
