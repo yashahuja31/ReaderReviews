@@ -7,6 +7,6 @@ const bookSchema = new mongoose.Schema({
   description: String,
   coverImage: String,
   averageRating: { type: Number, default: 0 },
-}, { timestamps: true, collection: 'books' }); 
+}, { timestamps: true, collection: 'test.books' }); 
 
 export default mongoose.model('Book', bookSchema);
