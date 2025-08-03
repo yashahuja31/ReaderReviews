@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = "http://localhost:5000/api/users";
+// IMPORTANT: Update this URL to your Render backend URL
+const API_URL = "https://readerreviews.onrender.com/api/users";
 
 export const getUserProfile = async (token) => {
   const { data } = await axios.get(`${API_URL}/profile`, {
@@ -13,6 +14,15 @@ export const getUserProfile = async (token) => {
 
 export const updateUserProfile = async (userData, token) => {
   const { data } = await axios.put(`${API_URL}/profile`, userData, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return data;
+};
+
+export const markBookAsRead = async (bookId, token) => {
+  const { data } = await axios.post(`${API_URL}/read/${bookId}`, {}, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

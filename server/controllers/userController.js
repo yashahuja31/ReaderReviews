@@ -7,17 +7,38 @@ import bcrypt from 'bcryptjs';
 export const getUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id).select('-password');
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
 
-    const booksRead = await Book.find({ _id: { $in: user.booksRead } }, 'title');
+    let booksRead = [];
+    try {
+      booksRead = await Book.find({ _id: { $in: user.booksRead } }, 'title');
+    } catch (err) {
+      console.error('Error fetching books read:', err);
+    }
+    
+    let userReviews = [];
+    try {
+      userReviews = await Review.find({ user: user._id }).populate('book', 'title');
+    } catch (err) {
+      console.error('Error fetching user reviews:', err);
+    }
 
-    const userReviews = await Review.find({ user: user._id }).populate('book', 'title');
     const reviews = userReviews.map((review) => ({
       bookTitle: review.book?.title || 'Unknown Book',
       comment: review.comment || '',
       rating: review.rating || 0
     }));
 
-    const allBooks = user.isAdmin ? await Book.find({}, 'title') : [];
+    let allBooks = [];
+    if (user.isAdmin) {
+      try {
+        allBooks = await Book.find({}, 'title');
+      } catch (err) {
+        console.error('Error fetching all books for admin:', err);
+      }
+    }
 
     res.json({
       _id: user._id,
@@ -38,6 +59,9 @@ export const getUserProfile = async (req, res) => {
 export const updateUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
 
     if (req.body.name) user.name = req.body.name;
     if (req.body.password) {
@@ -62,6 +86,9 @@ export const updateUserProfile = async (req, res) => {
 export const markBookAsRead = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
     const bookId = req.params.bookId;
 
     if (!user.booksRead.includes(bookId)) {

@@ -3,7 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../contexts/authContext";
 import "./BookDetails.css";
-import { Star } from 'lucide-react'; // Import Star icon
+import { Star } from 'lucide-react';
+import { markBookAsRead } from "../services/userService";
+import { getReviews, submitReview, deleteReview } from "../services/reviewService"; 
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -17,23 +19,23 @@ const BookDetails = () => {
   const [reviewMessage, setReviewMessage] = useState("");
   const [error, setError] = useState("");
 
+  const fetchReviews = async () => {
+    try {
+      const data = await getReviews(id);
+      setReviews(data);
+    } catch (err) {
+      console.error("Error fetching reviews", err);
+    }
+  };
+
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const res = await axios.get(`/api/books/${id}`);
+        const res = await axios.get(`https://readerreviews.onrender.com/api/books/${id}`);
         setBook(res.data);
       } catch (err) {
         setError("Book not found or an error occurred.");
         console.error(err);
-      }
-    };
-
-    const fetchReviews = async () => {
-      try {
-        const res = await axios.get(`/api/reviews/${id}`);
-        setReviews(res.data);
-      } catch (err) {
-        console.error("Error fetching reviews", err);
       }
     };
 
@@ -49,9 +51,7 @@ const BookDetails = () => {
       return;
     }
     try {
-      await axios.post(`/api/users/read/${id}`, {}, {
-        headers: { Authorization: `Bearer ${user.token}` }
-      });
+      await markBookAsRead(id, user.token);
       setReadMessage("✅ Book marked as read!");
     } catch (err) {
       console.error("Mark as read failed", err);
@@ -59,7 +59,7 @@ const BookDetails = () => {
     }
   };
 
-  const submitReview = async (e) => {
+  const handleReviewSubmit = async (e) => { // Renamed local function
     e.preventDefault();
     if (!user) {
       setReviewMessage("Please log in to submit a review.");
@@ -71,33 +71,37 @@ const BookDetails = () => {
     }
 
     try {
-      await axios.post(
-        `/api/reviews/${id}`,
-        { rating, comment },
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        }
-      );
+      await submitReview(id, { rating, comment }, user.token);
       setReviewMessage("✅ Review submitted successfully!");
       setRating(0);
       setComment("");
-
-      // Re-fetch reviews to update the list and average rating
-      const { data } = await axios.get(`/api/reviews/${id}`);
-      setReviews(data);
-      // Optionally re-fetch book to update average rating display
-      const bookRes = await axios.get(`/api/books/${id}`);
+      
+      const updatedReviews = await getReviews(id);
+      setReviews(updatedReviews);
+      const bookRes = await axios.get(`https://readerreviews.onrender.com/api/books/${id}`);
       setBook(bookRes.data);
-
     } catch (err) {
       setReviewMessage(err.response?.data?.message || "Error submitting review.");
     }
   };
 
+  const handleDeleteReview = async (reviewId) => {
+    if (!window.confirm("Are you sure you want to delete this review?")) {
+      return;
+    }
+    try {
+      await deleteReview(reviewId, user.token);
+      setReviewMessage("Review deleted successfully!");
+      fetchReviews(); // Re-fetch reviews to update the list
+    } catch (err) {
+      setReviewMessage(err.response?.data?.message || "Failed to delete review.");
+    }
+  };
+
   if (error) return <p className="error-message">{error}</p>;
   if (!book) return <p>Loading book details...</p>;
+
+  const hasUserReview = reviews.some(r => r.user?._id === user?._id);
 
   return (
     <div className="book-details-container">
@@ -150,26 +154,30 @@ const BookDetails = () => {
           </p>
         )}
         {user ? (
-          <form onSubmit={submitReview} className="review-form">
-            <div className="star-rating">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star
-                  key={star}
-                  size={32}
-                  className={`star ${star <= rating ? "filled" : ""}`}
-                  onClick={() => setRating(star)}
-                />
-              ))}
-            </div>
-            <textarea
-              rows="3"
-              placeholder="Write your review..."
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-              required
-            />
-            <button type="submit">Submit Review</button>
-          </form>
+          hasUserReview ? (
+            <p>You have already reviewed this book. Go to your profile to edit or delete your review.</p>
+          ) : (
+            <form onSubmit={handleReviewSubmit} className="review-form">
+              <div className="star-rating">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star
+                    key={star}
+                    size={32}
+                    className={`star ${star <= rating ? "filled" : ""}`}
+                    onClick={() => setRating(star)}
+                  />
+                ))}
+              </div>
+              <textarea
+                rows="3"
+                placeholder="Write your review..."
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                required
+              />
+              <button type="submit">Submit Review</button>
+            </form>
+          )
         ) : (
           <p>Login to submit a review.</p>
         )}
@@ -197,6 +205,9 @@ const BookDetails = () => {
                   ({r.rating} / 5)
                 </div>
                 <p>{r.comment}</p>
+                {user?._id === r.user?._id && (
+                  <button onClick={() => handleDeleteReview(r._id)}>Delete</button>
+                )}
               </li>
             ))}
           </ul>

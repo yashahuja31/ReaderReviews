@@ -12,8 +12,14 @@ import reviewRoutes from './routes/reviewRoutes.js';
 dotenv.config();
 const app = express();
 
+// A more permissive CORS configuration for testing
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // For legacy browser support
+};
+
 //connection of all routes
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
@@ -23,7 +29,8 @@ app.use('/api/reviews', reviewRoutes);
 // connection between the codebase and the database for storage and easy accces of data
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  dbName: 'test' // Explicitly set the database name
 }).then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 

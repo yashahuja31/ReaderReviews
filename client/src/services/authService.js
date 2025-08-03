@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL  = import.meta.env.VITE_API_URL;
+// IMPORTANT: Update this URL to your Render backend URL
+const API_URL = "https://readerreviews.onrender.com/api/auth";
 
 // Login user
 export const loginUser = async (email, password) => {
