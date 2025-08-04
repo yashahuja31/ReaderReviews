@@ -5,9 +5,13 @@ import isAdmin from '../middleware/adminMiddleware.js';
 
 const router = express.Router();
 
+// route to get all books
+router.get('/', getAllBooks);
 
-router.get('/', getAllBooks); // becomes /api/books and is public
-router.get('/:id', getBookById); // becomes /api/books/:id and is publci
-router.post('/', protect, isAdmin, addBook); // becomes /api/books (POST) but is private
- 
+// route to get a book by its ID
+router.get('/:id', getBookById);
+
+// route to add a new book (protected for admins)
+router.post('/', protect, isAdmin, addBook);
+
 export default router;

@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// IMPORTANT: Update this URL to your Render backend URL
-const API_URL = "https://readerreviews.onrender.com";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const getReviews = async (bookId) => {
   const res = await axios.get(`${API_URL}/api/reviews/${bookId}`);
@@ -20,4 +19,4 @@ export const deleteReview = async (reviewId, token) => {
     headers: { Authorization: `Bearer ${token}` }
   });
   return res.data;
-}
+};

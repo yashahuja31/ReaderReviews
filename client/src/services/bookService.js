@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// IMPORTANT: Update this URL to your Render backend URL
-const API_URL = "https://readerreviews.onrender.com";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const fetchBooks = async (page = 1) => {
   const res = await axios.get(`${API_URL}/api/books?page=${page}`);
