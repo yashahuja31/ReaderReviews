@@ -21,6 +21,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profilepage" element={user ? <ProfilePage /> : <Login />} />
+        console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
       </Routes>
     </Router>
   );
