@@ -1,0 +1,7 @@
+/* PageContainer.css */
+.page-container {
+  padding-top: 90px; /* Space for the floating navbar */
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}

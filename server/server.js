@@ -8,6 +8,7 @@ import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import bookRoutes from './routes/bookRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
+import otpRoutes from './routes/otpRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -25,6 +26,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/books', bookRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.use('/api/otp', otpRoutes);
 
 // connection between the codebase and the database for storage and easy accces of data
 mongoose.connect(process.env.MONGO_URI, {

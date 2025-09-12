@@ -66,6 +66,24 @@
     box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2); 
 }
 
+.error-message {
+    color: #e53935;
+    background-color: rgba(229, 57, 53, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+}
+
+.success-message {
+    color: #43a047;
+    background-color: rgba(67, 160, 71, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+}
+
 .auth-box button {
     width: 100%;
     padding: 0.9rem; 

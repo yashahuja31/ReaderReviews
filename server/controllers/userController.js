@@ -13,7 +13,7 @@ export const getUserProfile = async (req, res) => {
 
     let booksRead = [];
     try {
-      booksRead = await Book.find({ _id: { $in: user.booksRead } }, 'title');
+      booksRead = await Book.find({ _id: { $in: user.booksRead } }, 'title author coverImage');
     } catch (err) {
       console.error('Error fetching books read:', err);
     }
