@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { getUserProfile, updateUserProfile } from '../services/userService';
 import LogoutButton from '../components/LogoutButton';
 import { useAuth } from '../contexts/authContext';
-import { deleteReview } from '../services/reviewService'; // Import the new function
+import { deleteReview } from '../services/reviewService';
+import { Link } from 'react-router-dom';
+import { Star, Edit2, Trash2, BookOpen, Clock, Award, User, Settings, ChevronRight, BookMarked } from 'lucide-react';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
@@ -133,112 +135,245 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="profile-page">
-      <div className="profile-header">
-        <div className="profile-left">
-          <h1>{profile.name}'s Profile</h1>
-          <p>Email: {profile.email}</p>
-          <p>Role: {profile.isAdmin ? 'Admin' : 'User'}</p>
-        </div>
-        <div className="profile-right">
-          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAqgMBIgACEQEDEQH/xAAAbAAEAAgMBAQAAAAAAAAAAAAAABgcDBAUBAv/EADgQAAIBAwEFAwkGBwAAAAAAAAABAgMEBREGITFBUWGBkRITIiMyQqGx0RRSU3FywRUkMzRzsvD/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/ALSABpkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB3mjlspbYuh5yu25P2Ka9qf/AHUhWR2jyF7JqNXzFLlCk9PF8WDVharhqe95UzqVJPWVSo31cmbtlmchZSToXM9F7s35SfcwaswHEwe0VDJtUasVSutPZT3T/S/2O34gAAAAAAAAAAAAAAAAAAAMF7dU7K0q3NZ+hTWr7eiM5E9urzSFvZxb0l6ya+CAjORva2Qu53Nw/SlwjyiuiNYA0gAAPqEpQnGUG1KL1i1xTLD2cyn8Usamn2iloqi69Jd5XR2NlLv7LmKUdWoVvVy059PiZVYYHMAAAAAAAAAAAAAAAAACBbaScs1o+VKOnxJ6Qbbem45WnPlOktO5sCOgA0gAABnsZON9byXFVY/NGA28TTdXJ2lNc6sfmZVaAAAAAAAAAAAAAAAAAAAEb23s5VrCndRWsqD9PT7r5+JJD4q04Vac6dSKlCacZJ8GmBU4OtncJVxdZyjFztJP0Ki93sfb8zklAADTAkOxdm6+Slctert48esnwXzORj7C4yNwqNtTcpe9L3YLq2WLisfSxllG3o79H5U5c5S5sg3Hx7wAAAAAAAAAAAAAAAAAAAAHkkpRcZKMotaNSW5nGu9l8ZcPWNOVGT50paLwe437zJ2Vj/dXNOD+7rq/BHHr7X2EH6qlXq9yiviBiexlrruu6yX6YmxbbI46lJSqyrVuyUtF8DUe2tPXdY1NP8AKvoZqW2VnJpVbavT7U1ICQW1vRtaSpW9KFOC5QWhlObZ53G3jUaV1GMn7tT0WdIAAAAAAAAAAAAAAAAAAc7N5alirXzk9J1p7qVPX2n9AM2RyNtjqPnbqoop+zFb5SfYiF5Taa9vHKFBu2odIv0n+bOVe3le+uJV7mbnN+CXRdhgAPe9d+r4vXeACoAAoadTo43NX2N0VCq5Utd9Ko9Yv6HOBBYuFztrlEoL1VxzpTfH8up1ipYSlCSlCTjKL1UluaZONmdoPt+lpeNK5S9CXDzi+pFSIAAAAAAAAAAAABhurila29SvXl5NOEXJsrTKX9bJXdS5uN2u6MeUVyRItt79uVLHwlu3VKunXkv37yJoAACxKAAoAAAAAB9U5zpzU6cnGcWpJriu0+QRYsjZ/KLKWCqTeleD8mrHt5PvOmVzszf/AMPylNylpSq+rnrwWr3PuLGIAAAAAAAAB5u58D01cnVdDHXVVcY0ZNeAFcZS5d5kbm5b/qVG12LgvgkaoQLEoACgAAAAAAAAAACZ7Bv+SuVy86v9T0Eok4AI0AAI//Z" alt="Profile" className="profile-pic" />
-        </div>
-      </div>
-
-      <hr style={{ margin: "2rem 0" }} />
-
-      <div className="horizontal-section">
-        <h3>Books Read ({profile.booksRead ? profile.booksRead.length : 0})</h3>
-        <div className="scroll-container">
-          {profile.booksRead && profile.booksRead.length > 0 ? (
-            profile.booksRead.map((book) => (
-              <div key={book._id} className="scroll-item">
-                <p>{book.title}</p>
+    <div className="imdb-profile-container">
+      {error && <div className="error-message">{error}</div>}
+      {message && <div className="success-message">{message}</div>}
+      
+      {!profile ? (
+        <div className="loading-spinner">Loading profile data...</div>
+      ) : (
+        <>
+          {/* Profile Header Banner */}
+          <div className="profile-banner">
+            <div className="profile-avatar">
+              {profile.name.charAt(0).toUpperCase()}
+            </div>
+            <div className="profile-info">
+              <h1>{profile.name}</h1>
+              <p className="profile-email">{profile.email}</p>
+              <div className="profile-badge">
+                {profile.isAdmin ? 'Admin' : 'Member'}
               </div>
-            ))
-          ) : (
-            <p>No books marked as read yet.</p>
-          )}
-        </div>
-      </div>
-
-      <div className="horizontal-section">
-        <h3>Your Reviews ({profile.reviews ? profile.reviews.length : 0})</h3>
-        <div className="scroll-container">
-          {profile.reviews && profile.reviews.length > 0 ? (
-            profile.reviews.map((review) => (
-              <div key={review._id} className="scroll-item">
-                <p><strong>Book:</strong> {review.bookTitle}</p>
-                <p><strong>Rating:</strong> {review.rating} / 5</p>
-                <p><strong>Comment:</strong> {review.comment}</p>
-                <button onClick={() => handleDeleteReview(review._id)}>Delete</button>
-              </div>
-            ))
-          ) : (
-            <p>No reviews submitted yet.</p>
-          )}
-        </div>
-      </div>
-
-      {profile.isAdmin && (
-        <div className="horizontal-section">
-          <h3>All Books (Admin View) ({profile.allBooks ? profile.allBooks.length : 0})</h3>
-          <div className="scroll-container">
-            {profile.allBooks && profile.allBooks.length > 0 ? (
-              profile.allBooks.map((book) => (
-                <div key={book._id} className="scroll-item admin-book">
-                  <p>{book.title}</p>
-                  <button>Edit</button>
-                  <button>Delete</button>
-                </div>
-              ))
-            ) : (
-              <p>No books in the database.</p>
-            )}
-            <button className="add-book-button">
-              <a href="/addbook" style={{ textDecoration: 'none', color: 'inherit' }}>+ Add Book</a>
-            </button>
+            </div>
           </div>
-        </div>
+          
+          {/* Profile Stats */}
+          <div className="profile-stats">
+            <div className="stat-item">
+              <div className="stat-value">{profile.reviews ? profile.reviews.length : 0}</div>
+              <div className="stat-label">Reviews</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-value">{profile.booksRead ? profile.booksRead.length : 0}</div>
+              <div className="stat-label">Read</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-value">0</div>
+              <div className="stat-label">Want to Read</div>
+            </div>
+          </div>
+          
+          {/* Profile Actions */}
+          <div className="profile-actions">
+            <button 
+              className="profile-action-btn"
+              onClick={() => { 
+                setShowChangeUsername(!showChangeUsername); 
+                setShowChangePassword(false); 
+                setMessage(''); 
+                setError(''); 
+              }}
+            >
+              <Edit2 size={18} /> Edit Username
+            </button>
+            <button 
+              className="profile-action-btn"
+              onClick={() => { 
+                setShowChangePassword(!showChangePassword); 
+                setShowChangeUsername(false); 
+                setMessage(''); 
+                setError(''); 
+              }}
+            >
+              <Settings size={18} /> Change Password
+            </button>
+            <LogoutButton className="profile-action-btn logout-btn" />
+          </div>
+          
+          {/* Username Update Form */}
+          {showChangeUsername && (
+            <div className="modal-overlay">
+              <div className="modal-content">
+                <form onSubmit={handleUsernameUpdate} className="update-form">
+                  <h3>Update Username</h3>
+                  <div className="form-group">
+                    <label htmlFor="newUsername">New Username:</label>
+                    <input
+                      type="text"
+                      id="newUsername"
+                      value={newUsername}
+                      onChange={(e) => setNewUsername(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="form-actions">
+                    <button type="submit" className="submit-button">Update</button>
+                    <button 
+                      type="button" 
+                      className="cancel-button"
+                      onClick={() => {
+                        setShowChangeUsername(false);
+                        setNewUsername('');
+                      }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+          
+          {/* Password Update Form */}
+          {showChangePassword && (
+            <div className="modal-overlay">
+              <div className="modal-content">
+                <form onSubmit={handlePasswordUpdate} className="update-form">
+                  <h3>Update Password</h3>
+                  <div className="form-group">
+                    <label htmlFor="newPassword">New Password:</label>
+                    <input
+                      type="password"
+                      id="newPassword"
+                      value={newPassword}
+                      onChange={(e) => setNewPassword(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="form-actions">
+                    <button type="submit" className="submit-button">Update</button>
+                    <button 
+                      type="button" 
+                      className="cancel-button"
+                      onClick={() => {
+                        setShowChangePassword(false);
+                        setNewPassword('');
+                      }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+          
+          {/* Content Sections */}
+          <div className="profile-content">
+            {/* Reviews Section */}
+            <section className="profile-section">
+              <div className="section-header">
+                <h2><Star className="section-icon" /> Your Reviews</h2>
+              </div>
+              
+              {profile.reviews && profile.reviews.length > 0 ? (
+                <div className="reviews-grid">
+                  {profile.reviews.map((review) => (
+                    <div key={review._id} className="review-card">
+                      <div className="review-book-info">
+                        <Link to={`/books/${review.book}`}>
+                          <h3 className="book-title">{review.bookTitle}</h3>
+                        </Link>
+                        <div className="review-rating">
+                          <Star size={16} className="star-icon" />
+                          <span>{review.rating}/5</span>
+                        </div>
+                      </div>
+                      <p className="review-content">{review.comment}</p>
+                      <button 
+                        className="delete-review-btn"
+                        onClick={() => handleDeleteReview(review._id)}
+                      >
+                        <Trash2 size={16} /> Delete
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="empty-state">
+                  <BookOpen size={48} />
+                  <p>You haven't written any reviews yet.</p>
+                  <Link to="/books" className="action-link">Browse Books to Review</Link>
+                </div>
+              )}
+            </section>
+            
+            {/* Reading List Section */}
+            <section className="profile-section">
+              <div className="section-header">
+                <h2><BookOpen className="section-icon" /> Your Reading List</h2>
+              </div>
+              
+              {profile.booksRead && profile.booksRead.length > 0 ? (
+                <div className="books-grid">
+                  {profile.booksRead.map((book) => (
+                    <div key={book._id} className="book-card">
+                      <Link to={`/books/${book._id}`}>
+                        <h3 className="book-title">{book.title}</h3>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="empty-state">
+                  <BookOpen size={48} />
+                  <p>Your reading list is empty.</p>
+                  <Link to="/books" className="action-link">Find Books to Read</Link>
+                </div>
+              )}
+            </section>
+            
+            {/* Admin Section */}
+            {profile.isAdmin && (
+              <section className="profile-section admin-section">
+                <div className="section-header">
+                  <h2><Award className="section-icon" /> Admin Controls</h2>
+                </div>
+                
+                <div className="admin-controls">
+                  <Link to="/addbook" className="admin-action-btn">
+                    <BookOpen size={18} /> Add New Book
+                  </Link>
+                  <Link to="/admin/users" className="admin-action-btn">
+                    <User size={18} /> Manage Users
+                  </Link>
+                </div>
+                
+                {profile.allBooks && profile.allBooks.length > 0 && (
+                  <div className="admin-books-list">
+                    <h3>All Books ({profile.allBooks.length})</h3>
+                    <div className="admin-books-grid">
+                      {profile.allBooks.map((book) => (
+                        <div key={book._id} className="admin-book-item">
+                          <span>{book.title}</span>
+                          <div className="admin-book-actions">
+                            <Link to={`/books/edit/${book._id}`} className="edit-btn">
+                              <Edit2 size={16} />
+                            </Link>
+                            <button className="delete-btn">
+                              <Trash2 size={16} />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </section>
+            )}
+          </div>
+        </>
       )}
-
-      <div className="profile-actions">
-        <button onClick={() => { setShowChangeUsername(!showChangeUsername); setShowChangePassword(false); setMessage(''); setError(''); }}>Change Username</button>
-        <button onClick={() => { setShowChangePassword(!showChangePassword); setShowChangeUsername(false); setMessage(''); setError(''); }}>Change Password</button>
-      </div>
-
-      {showChangeUsername && (
-        <form onSubmit={handleUsernameUpdate} className="inline-form">
-          <input
-            type="text"
-            placeholder="Enter new username"
-            value={newUsername}
-            onChange={(e) => setNewUsername(e.target.value)}
-            required
-          />
-          <button type="submit">Update Username</button>
-        </form>
-      )}
-
-      {showChangePassword && (
-        <form onSubmit={handlePasswordUpdate} className="inline-form">
-          <input
-            type="password"
-            placeholder="Enter new password"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-            required
-          />
-          <button type="submit">Update Password</button>
-        </form>
-      )}
-
-      {message && <p className="message">{message}</p>}
-    
-
-      <div className="logout-section">
-        <LogoutButton />
-      </div>
     </div>
   );
 };

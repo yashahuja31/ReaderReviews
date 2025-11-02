@@ -3,17 +3,48 @@
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 65%; /* 65% of screen width */
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 85%; /* Wider for better visibility */
+  background-color: var(--color-dark-1);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 25px;
+  padding: 12px 25px;
   z-index: 1000;
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-dark-3);
+}
+
+body.light-theme .floating-navbar {
+  background-color: var(--color-light-1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-light-3);
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: rotate(30deg);
+  background-color: rgba(245, 197, 24, 0.1);
+}
+
+.theme-icon {
+  font-size: 1.2rem;
 }
 
 .navbar-links {
@@ -30,33 +61,64 @@
 
 .login-link, .register-link {
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 4px;
   transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
 }
 
 .login-link {
-  color: var(--primary-color);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.login-link:hover {
+  background-color: rgba(245, 197, 24, 0.1);
 }
 
 .register-link {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--color-accent);
+  color: var(--color-dark-1);
+  border: 1px solid var(--color-accent);
+}
+
+.register-link:hover {
+  background-color: var(--color-accent-dark);
 }
 
 .nav-link {
-  color: var(--text-medium);
+  color: var(--text-primary);
   font-weight: 500;
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.2s ease;
-  font-size: 1.05rem;
-  padding: 5px 10px;
-  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  position: relative;
 }
 
 .nav-link:hover {
-  color: var(--primary-color);
-  transform: translateY(-2px);
+  color: var(--color-accent);
+  background-color: rgba(245, 197, 24, 0.1);
   text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 70%;
 }
 
 .profile-section {

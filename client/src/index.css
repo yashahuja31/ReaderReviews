@@ -1,19 +1,28 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Roboto+Condensed:wght@700&display=swap');
 
 :root {
-  /* Revised Color Palette */
-  --primary-color: #4A90E2; /* A softer, professional blue */
-  --secondary-color: #6B73FF; /* A complementary, slightly purplish blue */
-  --accent-color: #2ECC71; /* A fresh green for accents/success */
-  --text-dark: #2C3E50; /* Dark charcoal for headings, strong contrast */
-  --text-medium: #34495E; /* Slightly lighter charcoal for body text */
-  --text-light: #7F8C8D; /* Muted grey for secondary info */
-  --background-light: #ECF0F1; /* Very light grey for general background */
-  --background-card: #FFFFFF; /* Pure white for cards and prominent sections */
-  --border-color: #DDE6ED; /* Light grey for borders */
-  --success-color: #27AE60; /* Darker green for success messages */
-  --error-color: #E74C3C; /* Vibrant red for error messages */
+  /* IMDb-like Color Palette */
+  --primary-color: #F5C518; /* IMDb gold */
+  --secondary-color: #121212; /* Dark gray/black */
+  --accent-color: #E50914; /* Netflix-like red for accents */
+  --text-dark: #FFFFFF; /* White text for dark backgrounds */
+  --text-medium: #CCCCCC; /* Light gray for body text on dark backgrounds */
+  --text-light: #999999; /* Muted grey for secondary info */
+  --background-dark: #121212; /* Dark background (almost black) */
+  --background-medium: #1F1F1F; /* Slightly lighter dark for cards */
+  --background-light: #2C2C2C; /* Even lighter dark for hover states */
+  --border-color: #333333; /* Dark grey for borders */
+  --success-color: #46D369; /* Netflix-like green for success */
+  --error-color: #E50914; /* Netflix-like red for errors */
+  
+  /* Light Theme Variables */
+  --light-background: #F5F5F5;
+  --light-card-bg: #FFFFFF;
+  --light-text-dark: #121212;
+  --light-text-medium: #333333;
+  --light-text-light: #666666;
+  --light-border: #DDDDDD;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -35,15 +44,21 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif; /* Modern, clean sans-serif */
+  font-family: 'Source Sans Pro', sans-serif; /* IMDb-like font */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background-light); /* Solid light background */
+  background-color: var(--background-dark); /* Dark background */
   color: var(--text-medium);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+  background-color: var(--light-background);
+  color: var(--light-text-medium);
 }
 
 #root {
@@ -57,11 +72,16 @@ body {
   padding: var(--spacing-xl) var(--spacing-lg);
   max-width: 1200px;
   margin: var(--spacing-lg) auto;
-  background-color: var(--background-card);
+  background-color: var(--background-medium);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-medium);
   animation: fadeInScale 0.6s ease-out forwards;
   flex-grow: 1; /* Allows content area to expand */
+  transition: background-color 0.3s ease;
+}
+
+body.light-theme .page-container {
+  background-color: var(--light-card-bg);
 }
 
 @keyframes fadeInScale {
@@ -77,27 +97,48 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif; /* Elegant serif for headings */
+  font-family: 'Roboto Condensed', sans-serif; /* IMDb-like bold headings */
   color: var(--text-dark);
   margin-bottom: var(--spacing-sm);
   line-height: 1.2;
+  font-weight: 700;
 }
 
-h1 { font-size: 3.5rem; margin-bottom: var(--spacing-md); }
-h2 { font-size: 2.8rem; margin-bottom: var(--spacing-md); }
-h3 { font-size: 2.2rem; margin-bottom: var(--spacing-sm); }
+body.light-theme h1, 
+body.light-theme h2, 
+body.light-theme h3, 
+body.light-theme h4, 
+body.light-theme h5, 
+body.light-theme h6 {
+  color: var(--light-text-dark);
+}
+
+h1 { font-size: 3rem; margin-bottom: var(--spacing-md); letter-spacing: -0.5px; }
+h2 { font-size: 2.5rem; margin-bottom: var(--spacing-md); letter-spacing: -0.5px; }
+h3 { font-size: 2rem; margin-bottom: var(--spacing-sm); }
 
 /* Basic link styling */
 a {
   color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
 }
 
 a:hover {
-  color: var(--secondary-color);
-  text-decoration: underline;
+  color: var(--primary-color);
+  text-decoration: none;
   transform: translateY(-1px);
+  opacity: 0.8;
+}
+
+body.light-theme a {
+  color: var(--secondary-color);
+}
+
+body.light-theme a:hover {
+  color: var(--secondary-color);
+  opacity: 0.7;
 }
 
 /* Common button styles */

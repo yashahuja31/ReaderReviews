@@ -2,11 +2,35 @@ import { Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '../contexts/authContext';
 import './Navbar.css';
+// Import icons for theme toggle
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(true); // Default to dark theme
   const dropdownRef = useRef(null);
+
+  // Initialize theme from localStorage on component mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      setDarkTheme(false);
+      document.body.classList.add('light-theme');
+    }
+  }, []);
+
+  // Toggle theme function
+  const toggleTheme = () => {
+    setDarkTheme(!darkTheme);
+    if (darkTheme) {
+      document.body.classList.add('light-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.body.classList.remove('light-theme');
+      localStorage.setItem('theme', 'dark');
+    }
+  };
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -38,6 +62,9 @@ const Navbar = () => {
             <Link to="/readlist" className="nav-link">Read List</Link>
           </>
         )}
+        <button onClick={toggleTheme} className="theme-toggle-btn">
+          {darkTheme ? <FaSun className="theme-icon" /> : <FaMoon className="theme-icon" />}
+        </button>
       </div>
       {user ? (
         <div className="profile-section" ref={dropdownRef}>
